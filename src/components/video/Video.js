@@ -20,9 +20,9 @@ export default class Video extends React.Component {
 
             <div className="uk-margin">
               <iframe width="720" height="400"
-              src="https://www.youtube.com/embed/mGVVT3-SE7Y" frameborder="0"
+              src="https://www.youtube.com/embed/mGVVT3-SE7Y" frameBorder="0"
               allow="autoplay; encrypted-media"
-              allowfullscreen></iframe>
+              allowFullScreen></iframe>
             </div>
 
             <a href="#third-step" className="button is-info" onClick={ e => {
