@@ -26,7 +26,7 @@ class Faq extends React.Component {
   handleSelect = e => {
     const key = e.target.value
     console.log(this.state.datas)
-    const data = this.state.datas[k]
+    const data = this.state.datas[key]
     console.log(data)
     this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
     this.handleLinkDisplay()
