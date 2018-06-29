@@ -34,6 +34,8 @@ class Root extends React.Component {
       article: text,
       date
     })
+    alert("hello")
+    console.log(`${text} - ${url} - ${date}`)
   }
 
   showArticle = () => {
