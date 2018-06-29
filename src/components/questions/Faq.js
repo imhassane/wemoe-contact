@@ -28,8 +28,8 @@ class Faq extends React.Component {
     console.log(this.state.datas)
     
     Object.keys(this.state.datas).map(k => {
-      if(this.state.datas[k].question===key){
-         const data = this.state.datas[key]
+      const data = this.state.datas[k]
+      if(data.question===key){
          console.log(data)
          this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
           this.handleLinkDisplay() 
