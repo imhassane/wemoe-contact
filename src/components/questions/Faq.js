@@ -32,7 +32,7 @@ class Faq extends React.Component {
         this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
         this.handleLinkDisplay()
       }
-    }
+    })
   }
   render(){
     if(!this.state.datas) return <p>Chargement</p>
