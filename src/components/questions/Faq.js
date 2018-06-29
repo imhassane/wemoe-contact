@@ -47,7 +47,7 @@ class Faq extends React.Component {
                 {questions}
               </select>
             </div>
-            {this.state.visible && <a href="#second-step" className="button is-success">Etape suivante</a>}
+             <a href="#second-step" className="button is-success">Etape suivante</a>
           </div>
         </div>
       </div>
