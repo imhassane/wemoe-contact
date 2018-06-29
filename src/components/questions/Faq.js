@@ -25,15 +25,11 @@ class Faq extends React.Component {
   }
   handleSelect = e => {
     const key = e.target.value
-    
-    Object.keys(this.state.datas).map(k => {
-      if(k === key){
-        const data = this.state.datas[k]
-        console.log(data)
-        this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
-        this.handleLinkDisplay()
-      }
-    })
+    console.log(this.state.datas)
+    const data = this.state.datas[k]
+    console.log(data)
+    this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
+    this.handleLinkDisplay()
   }
   render(){
     if(!this.state.datas) return <p>Chargement</p>
