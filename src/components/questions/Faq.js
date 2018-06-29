@@ -30,7 +30,7 @@ class Faq extends React.Component {
       const data = this.state.datas[k]
       return (
         <option
-        onClick={e => {
+        onFocus={e => {
           this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
           this.handleLinkDisplay()
         }}
