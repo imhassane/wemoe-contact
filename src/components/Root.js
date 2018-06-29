@@ -58,9 +58,9 @@ class Root extends React.Component {
 
                 <Faq onGetVideoAndText={this.getVideoAndText} onShowContact={this.showContact} />
 
-                { this.state.showVideo && <Video question={this.state.question} video={this.state.url} onShowArticle={this.showArticle}/>}
-                { this.state.showArticle && <Article question={this.state.question} article={this.state.article} date={this.state.date} onShowContact={this.showContact} /> }
-                { this.state.showContact && <Contact /> }
+                <Video question={this.state.question} video={this.state.url} onShowArticle={this.showArticle}/>
+                <Article question={this.state.question} article={this.state.article} date={this.state.date} onShowContact={this.showContact} />
+                <Contact />
 
               </div>
 
