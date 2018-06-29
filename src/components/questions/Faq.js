@@ -23,6 +23,11 @@ class Faq extends React.Component {
     visible = !visible
     this.setState({ visible })
   }
+  handleSelect = e => {
+    const key = e.target.value
+    const data = this.state.datas[key]
+    console.log(data)
+  }
   render(){
     if(!this.state.datas) return <p>Chargement</p>
 
@@ -45,7 +50,7 @@ class Faq extends React.Component {
           <div className="container">
             <h2 className="title">En quoi pourrions-nous vous aider ?</h2>
             <div className="uk-margin">
-              <select className="form-control">
+              <select className="form-control" onSelect={ e=> this.handleSelect(e) }>
                 {questions}
               </select>
             </div>
