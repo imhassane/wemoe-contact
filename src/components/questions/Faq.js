@@ -25,6 +25,8 @@ class Faq extends React.Component {
   }
   handleSelect = e => {
     const key = e.target.value
+    console.log(key)
+    
     const data = this.state.datas[key]
     console.log(data)
   }
