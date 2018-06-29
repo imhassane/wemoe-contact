@@ -26,12 +26,12 @@ class Root extends React.Component {
     this.state = {}
   }
 
-  getVideoAndText = (question, text, url, date) => {
+  getVideoAndText = (question, article, url, date) => {
     this.setState({
       showVideo: true,
-      question: question,
-      url: url,
-      article: text,
+      question,
+      url,
+      article,
       date
     })
   }
@@ -58,7 +58,7 @@ class Root extends React.Component {
 
                 <Faq onGetVideoAndText={this.getVideoAndText} onShowContact={this.showContact} />
 
-                { this.state.showVideo && <Video question={this.state.question} video={this.state.url} onShowArticle={this.showArticle}/> }
+                { this.state.showVideo && <Video question={this.state.question} url={this.state.url} onShowArticle={this.showArticle}/> }
                 { this.state.showArticle && <Article question={this.state.question} article={this.state.article} date={this.state.date} onShowContact={this.showContact} /> }
                 { this.state.showContact && <Contact /> }
 

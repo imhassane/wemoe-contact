@@ -1,9 +1,28 @@
 import React from 'react'
+import { app } from '../../firebase'
 
 export default class Video extends React.Component {
   constructor(props){
     super(props)
     this.state = { visible: false }
+  }
+  componentWillMount(){
+    this.loadUrl()
+  }
+  
+  loadUrl = () => {
+    let lien = 'logoheader.png'
+
+    if(this.props.url !== '') lien = this.props.url
+
+    const ref = app.storage().ref(lien)
+
+    ref.getDownloadURL().then(url => {
+      this.setState({ lien: url })
+    })
+    .catch(error => {
+      this.setState({ error: true })
+    })
   }
   handleLinkDisplay = () => {
     let visible = this.state.visible
@@ -19,10 +38,7 @@ export default class Video extends React.Component {
             <h2 className="title">{this.props.question}</h2>
 
             <div className="uk-margin">
-              <iframe width="720" height="400"
-              src="https://www.youtube.com/embed/mGVVT3-SE7Y" frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen></iframe>
+              { this.state.lien && <img src={this.state.lien} />}
             </div>
 
             <a href="#third-step" className="button is-info" onClick={ e => {
