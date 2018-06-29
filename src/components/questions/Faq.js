@@ -27,7 +27,7 @@ class Faq extends React.Component {
     const key = e.target.value
     console.log(this.state.datas)
     
-    Object.map(this.state.datas).map(k => {
+    Object.keys(this.state.datas).map(k => {
       if(this.state.datas[k].question===key){
          const data = this.state.datas[key]
          console.log(data)
