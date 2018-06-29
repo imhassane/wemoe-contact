@@ -25,12 +25,10 @@ class Faq extends React.Component {
   }
   handleSelect = e => {
     const key = e.target.value
-    console.log(this.state.datas)
     
     Object.keys(this.state.datas).map(k => {
       const data = this.state.datas[k]
       if(data.question===key){
-         console.log(data)
          this.props.onGetVideoAndText(data.question, data.article, data.video, data.date)
           this.handleLinkDisplay() 
       }
@@ -56,7 +54,7 @@ class Faq extends React.Component {
                 {questions}
               </select>
             </div>
-             <a href="#second-step" className="button is-success">Etape suivante</a>
+            { this.state.visible && <a href="#second-step" className="button is-success">Etape suivante</a> }
           </div>
         </div>
       </div>
