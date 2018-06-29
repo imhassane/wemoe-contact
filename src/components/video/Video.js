@@ -13,7 +13,12 @@ export default class Video extends React.Component {
   loadUrl = () => {
     let lien = 'logoheader.png'
 
-    if(this.props.url !== '') lien = this.props.url
+    if(this.props.url !== ''){
+        lien = this.props.url
+        this.setState({ video: true })
+    }else{
+        this.setState({ video: false })
+    }
 
     const ref = app.storage().ref(lien)
 
@@ -38,7 +43,9 @@ export default class Video extends React.Component {
             <h2 className="title">{this.props.question}</h2>
 
             <div className="uk-margin">
-              { this.state.lien && <img src={this.state.lien} />}
+              { this.state.lien && !this.state.video && <img src={this.state.lien} />}
+              { this.state.video && <video src={this.state.lien}></video> }
+      
             </div>
 
             <a href="#third-step" className="button is-info" onClick={ e => {
