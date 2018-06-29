@@ -44,7 +44,7 @@ export default class Video extends React.Component {
 
             <div className="uk-margin">
               { this.state.lien && !this.state.video && <img src={this.state.lien} />}
-              { this.state.video && <video src={this.state.lien}></video> }
+              { this.state.video && <video src={this.state.lien} controls></video> }
       
             </div>
 
