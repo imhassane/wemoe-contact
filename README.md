@@ -1,2 +1,4 @@
 Landing page réalisée pour une présentation
-http://http://wemoe-contact.herokuapp.com/
+http://wemoe-contact.herokuapp.com/
+
+WeMoe est une petite entreprise qui veut simplifier l'information pour les personnes sur l'assurance emprunteur.
